@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificare cod permis de conducere 🇵🇱 Polonia</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://i.ibb.co/Tqv6zFz/IMG-20240919-142317.jpg);
+            text-align: center;
+            color: azure;
+        }
+
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            color: black;
+        }
+
+        .popup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #d6d6d6;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .popup img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .watermark {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+        }
+
+        #popup-text {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .head {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+            margin-top: 15%;
+        }
+
+        hr {
+            border: none;
+            border-top: 3px solid black;
+            width: 100%;
+        }
+
+        #ani {
+            width: 50%;
+            height: 30px;
+            border: 3px solid black;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .head {
+                font-size: 20px;
+                position: relative;
+            }
+
+            #popup-text {
+                font-size: 20px;
+            }
+
+            #ani {
+                width: 70%;
+                height: 25px;
+            }
+
+            .popup {
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        function afiseazaPopup(an) {
+            var popupContainer = document.getElementById("popup-container");
+            var popupText = document.getElementById("popup-text");
+            var popupImage = document.getElementById("popup-image");
+
+            var textPrestabilit = getLitera(an);
+
+            popupText.textContent = "Litera seriei de la codul de bare (13) pentru anul " + an + " este: " + textPrestabilit;
+            popupImage.src = "https://i.ibb.co/1LDVh6q/IMG-20231210-124156.jpg";
+
+            popupContainer.style.display = "flex";
+        }
+
+        function inchidePopup() {
+            var popupContainer = document.getElementById("popup-container");
+            popupContainer.style.display = "none";
+        }
+
+        function getLitera(an) {
+            var litere = {
+                "1999": "A", "2000": "B", "2001": "C", "2002": "D", "2003": "E",
+                "2004": "F", "2005": "G", "2006": "H", "2007": "I", "2008": "J",
+                "2009": "K", "2010": "L", "2011": "M", "2012": "N", "2013": "O (pentru cele emise în decembrie 2013 codul va fi P)",
+                "2014": "P", "2015": "Q", "2016": "R", "2017": "S", "2018": "U",
+                "2019": "W", "2020": "Y", "2021": "Z", "2022": "AA", "2023": "BA",
+                "2024": "CA"
+            };
+            return litere[an] || "N/A";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var popupContainer = document.getElementById("popup-container");
+
+            popupContainer.addEventListener("click", function (event) {
+                if (event.target === popupContainer) {
+                    inchidePopup();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="head">
+        <p>Verificare cod permis de conducere<br> 🇵🇱 Polonia 🇵🇱</p>
+        <hr>
+        <label class="ani" for="ani">Selectează anul eliberării (4.a):</label><br>
+        <select id="ani" onchange="afiseazaPopup(this.value)">
+            <option value="" disabled selected>Anul eliberării</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+    </div>
+    <div id="popup-container" class="popup-container">
+        <div id="popup" class="popup">
+            <p id="popup-text"></p>
+            <img id="popup-image" alt="Imagine verificare permis">
+        </div>
+    </div>
+    <img class="watermark" src="https://i.ibb.co/q9v4wW9/20230913-133046.png" alt="Watermark">
+</body>
+
+</html>
